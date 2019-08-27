@@ -4,12 +4,11 @@
 #include <Windows.h>
 #include <stdio.h>
 #include "include/connection.h"
-#include "include/queries.h"
+#include "include/TestTBL1.h"
 
 int main() {
 	connectDataBase();
-	insert();
-	printf("\nComplete.\n");
+    printf("\nComplete.\n");
 	disconnectDataBase();
 	return 0;
 }
