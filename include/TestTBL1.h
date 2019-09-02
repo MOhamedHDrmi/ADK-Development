@@ -11,6 +11,7 @@
 #define LASTNAME_LEN 256
 #define ADDRESS_LEN 256
 #define CITY_LEN 256
+#define CONDITIONVALUE_LEN 256
 
 void TestTBL1Save(char* FirstName, char* LastName, char* Address, char* City) {
 
@@ -26,13 +27,13 @@ void TestTBL1Save(char* FirstName, char* LastName, char* Address, char* City) {
 
     // Bind array values of parameters 1-4
     SQLBindParameter(hstmt, 1, SQL_PARAM_INPUT, SQL_C_CHAR,
-                     SQL_VARCHAR, 2, 0, FirstName, 2, NULL);
+                     SQL_VARCHAR, FIRSTNAME_LEN, 0, FirstName, FIRSTNAME_LEN, NULL);
     SQLBindParameter(hstmt, 2, SQL_PARAM_INPUT, SQL_C_CHAR,
-                     SQL_VARCHAR, 2, 0, LastName, 2, NULL);
+                     SQL_VARCHAR, LASTNAME_LEN, 0, LastName, LASTNAME_LEN, NULL);
     SQLBindParameter(hstmt, 3, SQL_PARAM_INPUT, SQL_C_CHAR,
-                     SQL_VARCHAR, 2, 0, Address, 2, NULL);
+                     SQL_VARCHAR, ADDRESS_LEN, 0, Address, ADDRESS_LEN, NULL);
     SQLBindParameter(hstmt, 4, SQL_PARAM_INPUT, SQL_C_CHAR,
-                     SQL_VARCHAR, 2, 0, City, 2, NULL);
+                     SQL_VARCHAR, CITY_LEN, 0, City, CITY_LEN, NULL);
 
     // execute stmt
     SQLExecDirect(hstmt, stmt, SQL_NTS);
@@ -52,15 +53,15 @@ void TestTBL1Update(char* conditionValue, char* FirstName, char* LastName, char*
 
     // Bind array values of parameters 1-4
     SQLBindParameter(hstmt, 1, SQL_PARAM_INPUT, SQL_C_CHAR,
-                     SQL_VARCHAR, 2, 0, FirstName, 2, NULL);
+                     SQL_VARCHAR, FIRSTNAME_LEN, 0, FirstName, FIRSTNAME_LEN, NULL);
     SQLBindParameter(hstmt, 2, SQL_PARAM_INPUT, SQL_C_CHAR,
-                     SQL_VARCHAR, 2, 0, LastName, 2, NULL);
+                     SQL_VARCHAR, LASTNAME_LEN, 0, LastName, LASTNAME_LEN, NULL);
     SQLBindParameter(hstmt, 3, SQL_PARAM_INPUT, SQL_C_CHAR,
-                     SQL_VARCHAR, 2, 0, Address, 2, NULL);
+                     SQL_VARCHAR, ADDRESS_LEN, 0, Address, ADDRESS_LEN, NULL);
     SQLBindParameter(hstmt, 4, SQL_PARAM_INPUT, SQL_C_CHAR,
-                     SQL_VARCHAR, 2, 0, City, 2, NULL);
+                     SQL_VARCHAR, CITY_LEN, 0, City, CITY_LEN, NULL);
     SQLBindParameter(hstmt, 5, SQL_PARAM_INPUT, SQL_C_CHAR,
-                     SQL_VARCHAR, 2, 0, conditionValue, 2, NULL);
+                     SQL_VARCHAR, CONDITIONVALUE_LEN, 0, conditionValue, CONDITIONVALUE_LEN, NULL);
 
     // execute stmt
     SQLExecDirect(hstmt, stmt, SQL_NTS);

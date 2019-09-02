@@ -7,8 +7,8 @@
 #include "include/TestTBL1.h"
 
 int main() {
-	connectDataBase();
+    connectDataBase();
     printf("\nComplete.\n");
-	disconnectDataBase();
-	return 0;
+    disconnectDataBase();
+    return 0;
 }
